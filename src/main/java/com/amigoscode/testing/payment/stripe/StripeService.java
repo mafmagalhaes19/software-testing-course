@@ -3,11 +3,11 @@ package com.amigoscode.testing.payment.stripe;
 import com.amigoscode.testing.payment.CardPaymentCharge;
 import com.amigoscode.testing.payment.CardPaymentCharger;
 import com.amigoscode.testing.payment.Currency;
-import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Charge;
 import com.stripe.net.RequestOptions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
+@ConditionalOnProperty(value = "stripe.enabled", havingValue = "true")
 public class StripeService implements CardPaymentCharger {
 
     private final StripeApi stripeApi;

@@ -2,7 +2,6 @@ package com.amigoscode.testing.payment.stripe;
 
 
 import com.amigoscode.testing.payment.CardPaymentCharge;
-import com.amigoscode.testing.payment.CardPaymentCharger;
 import com.amigoscode.testing.payment.Currency;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Charge;
